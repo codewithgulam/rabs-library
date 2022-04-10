@@ -1,0 +1,47 @@
+{% extends "base.html" %} {% block content %}
+
+<style>
+    form div {
+        margin: 5px;
+    }
+    
+    .wrapper {
+        max-width: 500px;
+        margin: auto;
+        padding: 40px;
+    }
+    
+    .addbtn {
+        /* margin: 10px; */
+    }
+    
+    .addbtn button {
+        padding: 5px 40px;
+        border: none;
+        background-color: #568db4;
+        color: aliceblue;
+        font-weight: bold;
+    }
+</style>
+<div class="container-fluid">
+
+    <div class="wrapper">
+
+        <form action="add" method="POST">
+            {% csrf_token %}
+            <label>ID:</label>
+            <div class="form-group">{{form.book_id}}</div>
+            <label>Name:</label>
+            <div>{{form.name}}</div>
+            <label>Author:</label>
+            <div>{{form.author}}</div>
+            <label>Created:</label>
+            <div>{{form.created}}</div>
+            <div class="addbtn">
+                <button type="submit">Add</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock content %}
+

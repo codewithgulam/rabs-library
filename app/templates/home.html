@@ -1,0 +1,40 @@
+{% extends 'base.html' %} {% block content %}
+<h1 style="text-align: center;"> Welcome to World Famous & populor E-Library </h1>
+
+
+<div class="container-fluid">
+
+
+    <table class="table  table-striped">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Author</th>
+                <th scope="col">Created</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in book %}
+            <tr>
+                <td>{{i.book_id}}</td>
+                <td>{{i.name}}</td>
+                <td>{{i.author}}</td>
+                <td>{{i.created}}</td>
+                {% comment %}
+                <td>
+
+                    <button type="button" class="btn btn-success"><a style="text-decoration: none; color: #FFF;" href="edit/{{i.id}}">Edit</a></button>
+
+                </td>
+                <td>
+
+                    <button type="button" class="btn btn-danger"><a style="text-decoration: none; color: #FFF;" href="delete/{{i.id}}">Delete</a></button>
+                </td> {% endcomment %}
+            </tr>
+            {%endfor%}
+
+        </tbody>
+    </table>
+</div>
+{% endblock content %}

@@ -1,0 +1,37 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="container">
+    {% for message in messages %}
+    <p>
+        {{message}}
+    </p>
+    {% endfor %}
+
+    <h1 style="text-align: center;">Update your book</h1>
+
+
+    <form action="/update/{{book.id}}" method="POST">
+        {% csrf_token %}
+
+        <div class="form-group">
+            <label for="exampleInputEmail1">ID:</label>
+            <input class="form-control" name="book_id" required value="{{book.book_id}}"> <br>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Name:</label>
+            <input class="form-control" name="book_id" required value="{{book.name}}"> <br>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Author:</label>
+            <input class="form-control" name="book_id" required value="{{book.author}}"> <br>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Created:</label>
+            <input class="form-control" name="book_id" required value="{{book.author}}"> <br>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+</div>
+{% endblock content %}
